@@ -1,0 +1,239 @@
+.dashboard-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.dashboard-container h1 {
+  color: var(--text-color);
+  margin-bottom: 2rem;
+}
+
+/* STATS CARDS */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.stat-card {
+  background: white;
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  transition: all 0.3s ease;
+  border-top: 4px solid transparent;
+}
+
+.stat-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
+}
+
+.stat-icon {
+  font-size: 2.5rem;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stat-icon.total {
+  background-color: #dbeafe;
+  font-size: 2rem;
+}
+
+.stat-icon.available {
+  background-color: #dcfce7;
+  font-size: 2rem;
+}
+
+.stat-icon.in-use {
+  background-color: #fef3c7;
+  font-size: 2rem;
+}
+
+.stat-icon.maintenance {
+  background-color: #fed7aa;
+  font-size: 2rem;
+}
+
+.stat-icon.low-stock {
+  background-color: #fee2e2;
+  font-size: 2rem;
+}
+
+.stat-icon.warranty {
+  background-color: #e9d5ff;
+  font-size: 2rem;
+}
+
+.stat-icon.maintenance-pending {
+  background-color: #fcdaca;
+  font-size: 2rem;
+}
+
+.stat-icon.maintenance-cost {
+  background-color: #fef08a;
+  font-size: 2rem;
+}
+
+.stat-content h3 {
+  font-size: 1rem;
+  color: var(--gray);
+  margin: 0 0 0.5rem 0;
+  font-weight: 500;
+}
+
+.stat-number {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-color);
+  margin: 0;
+}
+
+.stat-card:nth-child(1) { border-top-color: #2563eb; }
+.stat-card:nth-child(2) { border-top-color: #10b981; }
+.stat-card:nth-child(3) { border-top-color: #f59e0b; }
+.stat-card:nth-child(4) { border-top-color: #ef4444; }
+.stat-card:nth-child(5) { border-top-color: #ef4444; }
+.stat-card:nth-child(6) { border-top-color: #a855f7; }
+.stat-card:nth-child(7) { border-top-color: #f97316; }
+.stat-card:nth-child(8) { border-top-color: #eab308; }
+
+/* ALERTS SECTION */
+.alerts-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.alert-box {
+  background: white;
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+}
+
+.alert-box h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: var(--text-color);
+  font-size: 1.1rem;
+}
+
+.no-alerts {
+  color: var(--gray);
+  text-align: center;
+  padding: 2rem;
+}
+
+.alert-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.alert-item {
+  padding: 1rem;
+  border-radius: var(--radius);
+  border-left: 4px solid;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.low-stock-item {
+  background-color: #fee2e2;
+  border-color: #ef4444;
+}
+
+.warranty-item {
+  background-color: #fef3c7;
+  border-color: #f59e0b;
+}
+
+.calibration-item {
+  background-color: #e9d5ff;
+  border-color: #a855f7;
+}
+
+.overdue-item {
+  background-color: #fed7aa;
+  border-color: #f97316;
+}
+
+.maintenance-cycle-item {
+  background-color: #d1fae5;
+  border-color: #10b981;
+}
+
+.overdue-cycle-item {
+  background-color: #fecaca;
+  border-color: #dc2626;
+}
+
+.overdue-badge {
+  font-weight: 700;
+  color: #b85c0d;
+}
+
+.critical-badge {
+  font-weight: 700;
+  color: #991b1b;
+  background-color: #fca5a5;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+}
+
+.alert-item-content strong {
+  display: block;
+  color: var(--text-color);
+  margin-bottom: 0.25rem;
+}
+
+.alert-item-content p {
+  color: var(--gray);
+  font-size: 0.85rem;
+  margin: 0.25rem 0;
+}
+
+.lab-location {
+  display: inline-block;
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  color: var(--dark-gray);
+  margin-top: 0.25rem;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .stats-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+
+  .stat-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .stat-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 1.5rem;
+  }
+
+  .alerts-section {
+    grid-template-columns: 1fr;
+  }
+}
